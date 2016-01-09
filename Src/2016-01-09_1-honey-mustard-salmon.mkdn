@@ -1,0 +1,23 @@
+# Honey Mustard Baked Salmon
+
+Image: salmon-03 Honey Mustard Baked Salmon
+
+## Ingredients
+
+* 2 Salmon fillets
+* 1 tbsp. Honey
+* 1 tbsp. Mustard (preferable a grainy one)
+* 1 tbsp. Garlic, finely chopped
+
+## Instructions
+
+* Preheat the oven on 205&deg;C.
+* Mix the **honey**, **mustard** and **garlic**.
+* Place the **salmon** in a baking tray. Pour the honey-mustard over
+  the salmon, making sure the top gets covered.
+* Bake for 7-8 minutes on 205&deg;C.
+* Rest for a few minutes.
+
+Recipe: Simply honey_mustard_baked_salmon
+Ingredients: #Salmon #Honey #Mustard #Garlic
+Types: #Fish
