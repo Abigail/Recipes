@@ -1,0 +1,14 @@
+#!/opt/perl/bin/perl
+
+use 5.010;
+
+use strict;
+use warnings;
+no  warnings 'syntax';
+use autodie;
+
+my @directories = qw [HTML Images Styles];
+
+system rsync => "-a", @directories, 'home:WWW/Recipes';
+
+__END__

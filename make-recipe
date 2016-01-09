@@ -1,0 +1,235 @@
+#!/opt/perl/bin/perl
+
+use 5.010;
+
+use strict;
+use warnings;
+no  warnings 'syntax';
+use autodie;
+
+umask 022;
+
+use Text::Markdown 'markdown';
+
+opendir my $dh, "Src";
+my @files = map {/^(.*)\.mkdn$/ ? $1 : ()} readdir $dh;
+
+sub recipe {
+    my $line = $1;
+    my @parts = $line =~ /("[^"]+"|\S+)/g;
+    @parts = map {/"(.*)"/ ? $1 : $_} @parts;
+    if ($parts [0] eq "BBC") {
+        return 
+          sprintf "Based on a [recipe](http://www.bbc.co.uk/food/recipes/%s) " .
+                  'from [%s](http://www.bbc.co.uk/food/chefs/%s "%s").'  =>
+                  $parts [1], $parts [2], $parts [3], $parts [2];
+    }
+    elsif ($parts [0] eq "Simply") {
+        return
+          sprintf "Based on a [recipe]"                                      .
+                  "(http://www.simplyrecipes.com/recipes/%s) "               .
+                  "from [Elise Bauer](http://www.simplyrecipes.com/about/)." =>
+                  $parts [1];
+    }
+    return $line;
+}
+
+my %ingredients;
+my %chefs;
+my %sources;
+my %dates;
+my %types;
+for (my $i = 0; $i < @files; $i ++) {
+    my $name = $files [$i];
+    open my $fh_in,  "<", "Src/$name.mkdn";
+
+    local $/;
+    my $text = <$fh_in>;
+    close $fh_in;
+
+    #
+    # Preprocess the markdown
+    #
+    $text =~ s {(!\[[^]]*\]\()} {$1../Images/}g;
+
+    $text =~ s {^Image:\s*(?:Images/)?(\S+?)(?:\.jpg)?\s+(.*\S)}
+               {![$2](../Images/$1.jpg "$2")}gm;
+
+    $text =~ s {^Recipe:\s*(.*)}{recipe $1}gem;
+
+    #
+    # Find the first line with a title
+    #
+    my $title = "";
+    if ($text =~ /^#\s+(.*)/m) {
+        $title = $1;
+    }
+
+    #
+    # Grep meta data
+    #
+    while ($text =~
+             s/^(Ingredients?|Chefs?|Sources?|Types?):\s*(\#.*)\n//mi) {
+        my $type    = $1;
+        my $entries = $2;
+        while ($entries =~ /#([^#]+)/g) {
+            my $entry = $1;
+            $entry =~ s/\s+$//;
+            $entry =~ s/\s+/ /g;
+            my $type_data = $type =~ /^Ingredients/i ? \%ingredients
+                          : $type =~ /^Chef/i        ? \%chefs
+                          : $type =~ /^Source/i      ? \%sources
+                          : $type =~ /^Type/i        ? \%types
+                          : die "Huh?\n";
+            push @{$$type_data {$entry}} => [$name, $title];
+        }
+    }
+
+    my @dates;
+    while ($text =~ s/^Dates?:\s*([-0-9\s,]+)//m) {
+        my $date_line = $1;
+        push @dates => $date_line =~ /(20[0-9][0-9]-[0-9][0-9]-[0-9][0-9])/g;
+    }
+    unless (@dates) {
+        if ($name =~ /^(20[0-9][0-9]-[0-9][0-9]-[0-9][0-9])/) {
+            my $date = $1;
+            push @dates => $1;
+        }
+    }
+    foreach my $date (sort {$a cmp $b} @dates) {
+        my $first = $date eq $dates [0];
+        push @{$dates {$date}} => [$name, $title, $first];
+    }
+
+
+    #
+    # Convert to HTML.
+    #
+    my $html = markdown ($text => {
+        empty_element_suffix => ">",
+    });
+
+    open my $fh_out, ">", "HTML/$name.html";
+    #
+    # Post process the results.
+    #
+    my $prev = "&#x27F5;";
+    if ($i > 0) {
+        my $prev_name = $files [$i - 1];
+        $prev = "<a href = '$prev_name.html'>$prev</a>";
+    }
+    my $next = "&#x27F6;";
+    if ($i < @files - 1) {
+        my $next_name = $files [$i + 1];
+        $next = "<a href = '$next_name.html'>$next</a>";
+    }
+    my $index = "&#x2934;";
+    $index = "<a href = 'list.html'>$index</a>";
+
+    my $cats = "";
+
+    $cats .= "<a href = 'ingredients.html' title = 'Ingredients'>&#x24BE;</a>";
+    $cats .= "<a href = 'types.html'       title = 'Types'      >&#x24C9;</a>";
+    $cats .= "<a href = 'chefs.html'       title = 'Chefs'      >&#x24B8;</a>";
+    $cats .= "<a href = 'sources.html'     title = 'Sources'    >&#x24C8;</a>";
+
+    $html =~ s{</h1>\K}{<hr><div class = "prev">$prev $cats</div> 
+                            <div class = "next">$index $next</div><br>
+                        <hr>};
+
+    print $fh_out <<"    --";
+    <head>
+    <title>$title</title>
+    <link rel = "stylesheet" type = "text/css" href = "../Styles/style.css">
+    </head>
+    <body>
+    <div class = "outer">
+    <div class = "main">
+    $html
+    </div>
+    </div>
+    </body>
+    --
+
+    close $fh_out;
+}
+
+my $date_html;
+my $tag_html;
+my $chef_html;
+my $source_html;
+my $type_html;
+foreach my $date (sort {$b cmp $a} keys %dates) {
+    foreach my $entry (sort {$$b [0] cmp $$a [0]} @{$dates {$date}}) {
+        my ($name, $title, $first) = @$entry;
+        $title = "<em>$title</em>" unless $first;
+        $date_html .= "<li><a href = '$name.html'>$date $title</a></li>\n";
+    }
+}
+if ($date_html) {
+    $date_html = "<ul>$date_html</ul>";
+}
+
+foreach my $set ([\$tag_html,    \%ingredients],
+                 [\$chef_html,   \%chefs],
+                 [\$source_html, \%sources],
+                 [\$type_html,   \%types]) {
+    my ($html, $data) = @$set;
+    $$html .= "<ul class = 'tag-list'>\n";
+    foreach my $entry (sort {$a cmp $b} keys %$data) {
+        $$html .= "<li class = 'tag-item'>$entry\n<ul>\n";
+        foreach my $entry (sort {$$a [1] cmp $$b [1]} @{$$data {$entry}}) {
+            my ($name, $title) = @$entry;
+            $$html .= "<li><a href = '$name.html'>$title</a></li>\n";
+        }
+        $$html .= "</ul>\n";
+    }
+    $$html .= "</ul>\n";
+}
+
+
+open my $fh, ">", "HTML/list.html";
+print $fh <<"--";
+<html>
+<head>
+<title>Recipe Index</title>
+<link rel = "stylesheet" type = "text/css" href = "../Styles/style.css">
+</head>
+<body>
+<div class = "outer">
+<div class = "main">
+<h1>Recipe Index</h1>
+$date_html
+</div>
+</div>
+</body>
+--
+close $fh;
+
+foreach my $set ([$tag_html,    "Ingredients"],
+                 [$chef_html,   "Chefs"],
+                 [$source_html, "Sources"],
+                 [$type_html,   "Types"]) {
+    my ($html, $title) = @$set;
+    my $file_name = lc "HTML/$title.html";
+    open $fh, ">", $file_name;
+    print $fh <<"--";
+<html>
+<head>
+<title>$title Index</title>
+<link rel = "stylesheet" type = "text/css" href = "../Styles/style.css">
+</head>
+<body>
+<div class = "outer">
+<div class = "main">
+<h1>$title Index</h1>
+$html
+</div>
+</div>
+</body>
+--
+    close $fh;
+}
+
+
+__END__
