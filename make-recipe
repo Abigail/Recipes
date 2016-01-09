@@ -14,6 +14,12 @@ use Text::Markdown 'markdown';
 opendir my $dh, "Src";
 my @files = map {/^(.*)\.mkdn$/ ? $1 : ()} readdir $dh;
 
+my %ingredients;
+my %chefs;
+my %sources;
+my %dates;
+my %types;
+
 my %icon = (
     prev         =>  "&#x27F5;",
     next         =>  "&#x27F6;",
@@ -59,16 +65,20 @@ sub nav_bar {
 
 
 sub recipe {
-    my $line = $1;
+    my ($line, $name, $title) = @_;
     my @parts = $line =~ /("[^"]+"|\S+)/g;
     @parts = map {/"(.*)"/ ? $1 : $_} @parts;
     if ($parts [0] eq "BBC") {
+        push @{$chefs {$parts [2]}} => [$name, $title];
+        push @{$sources {BBC}}      => [$name, $title];
         return 
           sprintf "Based on a [recipe](http://www.bbc.co.uk/food/recipes/%s) " .
                   'from [%s](http://www.bbc.co.uk/food/chefs/%s "%s").'  =>
                   $parts [1], $parts [2], $parts [3], $parts [2];
     }
     elsif ($parts [0] eq "Simply") {
+        push @{$chefs {"Elise Bauer"}}      => [$name, $title];
+        push @{$sources {"Simply Recipes"}} => [$name, $title];
         return
           sprintf "Based on a [recipe]"                                      .
                   "(http://www.simplyrecipes.com/recipes/%s) "               .
@@ -78,11 +88,6 @@ sub recipe {
     return $line;
 }
 
-my %ingredients;
-my %chefs;
-my %sources;
-my %dates;
-my %types;
 for (my $i = 0; $i < @files; $i ++) {
     my $name = $files [$i];
     open my $fh_in,  "<", "Src/$name.mkdn";
@@ -92,6 +97,14 @@ for (my $i = 0; $i < @files; $i ++) {
     close $fh_in;
 
     #
+    # Find the first line with a title
+    #
+    my $title = "";
+    if ($text =~ /^#\s+(.*)/m) {
+        $title = $1;
+    }
+
+    #
     # Preprocess the markdown
     #
     $text =~ s {(!\[[^]]*\]\()} {$1../Images/}g;
@@ -99,15 +112,7 @@ for (my $i = 0; $i < @files; $i ++) {
     $text =~ s {^Image:\s*(?:Images/)?(\S+?)(?:\.jpg)?\s+(.*\S)}
                {![$2](../Images/$1.jpg "$2")}gm;
 
-    $text =~ s {^Recipe:\s*(.*)}{recipe $1}gem;
-
-    #
-    # Find the first line with a title
-    #
-    my $title = "";
-    if ($text =~ /^#\s+(.*)/m) {
-        $title = $1;
-    }
+    $text =~ s {^Recipe:\s*(.*)}{recipe $1, $name, $title}gem;
 
     #
     # Grep meta data
@@ -203,9 +208,13 @@ foreach my $set ([\$tag_html,    \%ingredients],
     $$html .= "<ul class = 'tag-list'>\n";
     foreach my $entry (sort {$a cmp $b} keys %$data) {
         $$html .= "<li class = 'tag-item'>$entry\n<ul>\n";
+        my ($pname, $ptitle) = ("", "");
         foreach my $entry (sort {$$a [1] cmp $$b [1]} @{$$data {$entry}}) {
             my ($name, $title) = @$entry;
+            next if $name eq $pname && $title eq $ptitle;
             $$html .= "<li><a href = '$name.html'>$title</a></li>\n";
+            $pname  = $name;
+            $ptitle = $title;
         }
         $$html .= "</ul>\n";
     }
