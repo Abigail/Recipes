@@ -14,6 +14,50 @@ use Text::Markdown 'markdown';
 opendir my $dh, "Src";
 my @files = map {/^(.*)\.mkdn$/ ? $1 : ()} readdir $dh;
 
+my %icon = (
+    prev         =>  "&#x27F5;",
+    next         =>  "&#x27F6;",
+    list         =>  "&#x2934;",
+    ingredients  =>  "&#x24BE;",
+    types        =>  "&#x24C9;",
+    chefs        =>  "&#x24B8;",
+    sources      =>  "&#x24C8;",
+);
+
+sub nav_bar {
+    my %args = @_;
+
+    my %links;
+
+    foreach my $key (qw [prev next]) {
+        if ($args {$key}) {
+            $links {$key} = sprintf "<a href = '%s.html'>%s</a>" =>
+                                      $args {$key}, $icon {$key}
+        }
+        else {
+            $links {$key} = sprintf "<span style = 'visibility: hidden'>" .
+                                    "%s</span>" => $icon {$key}
+        }
+    }
+
+    foreach my $key (qw [ingredients types chefs sources list]) {
+        $links {$key} =
+           sprintf "<a href = '%s.html' title = '%s' " .
+                                       "style = 'visibility: %s'>%s</a>" =>
+                      $key, ucfirst ($key),
+                            $args {"is_$key"} ? "hidden" : "visibile",
+                            $icon {$key};
+    }
+
+    my $nav_bar = sprintf "<hr><div class = 'prev'>%s %s%s%s%s</div>" .
+                              "<div class = 'next'>%s %s</div><br><hr>" =>
+                          map {$links {$_}} qw [prev ingredients types
+                                                chefs sources list next];
+
+    return $nav_bar;
+}
+
+
 sub recipe {
     my $line = $1;
     my @parts = $line =~ /("[^"]+"|\S+)/g;
@@ -113,29 +157,10 @@ for (my $i = 0; $i < @files; $i ++) {
     #
     # Post process the results.
     #
-    my $prev = "&#x27F5;";
-    if ($i > 0) {
-        my $prev_name = $files [$i - 1];
-        $prev = "<a href = '$prev_name.html'>$prev</a>";
-    }
-    my $next = "&#x27F6;";
-    if ($i < @files - 1) {
-        my $next_name = $files [$i + 1];
-        $next = "<a href = '$next_name.html'>$next</a>";
-    }
-    my $index = "&#x2934;";
-    $index = "<a href = 'list.html'>$index</a>";
+    my $nav_bar = nav_bar prev => $i > 0          ? $files [$i - 1] : undef,
+                          next => $i < @files - 1 ? $files [$i + 1] : undef;
 
-    my $cats = "";
-
-    $cats .= "<a href = 'ingredients.html' title = 'Ingredients'>&#x24BE;</a>";
-    $cats .= "<a href = 'types.html'       title = 'Types'      >&#x24C9;</a>";
-    $cats .= "<a href = 'chefs.html'       title = 'Chefs'      >&#x24B8;</a>";
-    $cats .= "<a href = 'sources.html'     title = 'Sources'    >&#x24C8;</a>";
-
-    $html =~ s{</h1>\K}{<hr><div class = "prev">$prev $cats</div> 
-                            <div class = "next">$index $next</div><br>
-                        <hr>};
+    $html =~ s{</h1>\K}{$nav_bar};
 
     print $fh_out <<"    --";
     <head>
@@ -187,6 +212,7 @@ foreach my $set ([\$tag_html,    \%ingredients],
     $$html .= "</ul>\n";
 }
 
+my $list_nav_bar = nav_bar is_list => 1;
 
 open my $fh, ">", "HTML/list.html";
 print $fh <<"--";
@@ -199,6 +225,7 @@ print $fh <<"--";
 <div class = "outer">
 <div class = "main">
 <h1>Recipe Index</h1>
+$list_nav_bar
 $date_html
 </div>
 </div>
@@ -212,6 +239,7 @@ foreach my $set ([$tag_html,    "Ingredients"],
                  [$type_html,   "Types"]) {
     my ($html, $title) = @$set;
     my $file_name = lc "HTML/$title.html";
+    my $nav_bar = nav_bar "is_\L$title" => 1;
     open $fh, ">", $file_name;
     print $fh <<"--";
 <html>
@@ -223,6 +251,7 @@ foreach my $set ([$tag_html,    "Ingredients"],
 <div class = "outer">
 <div class = "main">
 <h1>$title Index</h1>
+$nav_bar
 $html
 </div>
 </div>
