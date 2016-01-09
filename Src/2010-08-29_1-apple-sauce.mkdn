@@ -1,0 +1,31 @@
+# Apple Sauce
+
+## Ingredients
+
+* 500g Dessert apples
+* 150ml Water
+* 20g Sugar
+* Juice of &half; lemon
+* Cinnamon stick
+* Star anise (optional)
+* 30g Butter (optional)
+* Pinch of salt (optional)
+
+## Instructions
+
+* Peel, core and dice **apples**.
+* Place apples, **water**, **cinnamon**, **lemon juice**, **sugar**,
+  and (optionally) **star anise** into a saucepan.
+* Bring to a boil, then reduce heat. Simmer for 15-20 minutes, until the
+  apples start to fall apart.
+* Turn off heat, whisk in **butter** and **salt**.
+* Remove cinnamon and star anise.
+
+## Notes
+
+* For a dessert sauce, add more sugar, and don't use butter or salt.
+
+
+Dates: 2010-08-29 2010-09-05
+Ingredients: #Apple #Cinnamon
+Types: #Sauce

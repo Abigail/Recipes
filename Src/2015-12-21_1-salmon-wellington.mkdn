@@ -1,0 +1,35 @@
+# Salmon Wellington
+
+![Salmon Wellington](salmon-01.jpg "Salmon Wellington")
+
+## Instructions
+
+* Finely chop **mushrooms**.
+* Cook the mushrooms till tender; drain liquids.
+* Finely chop **dill**.
+* Peel a **cucumber**; split it lengthwise and remove seeds.
+* Cut the cucumber in slices, about .75 cm width. Mix with the dill.
+* Remove the skin from the **salmon fillet** (if neccessary).
+* Cut the salmon, put the cucumber-dill mixture between the slices, 
+  and reassamble.
+* Take some **filo pastry**; brush will melted **butter**.
+* Put the mushroom on the pastry, and the salmon on top of the mushrooms.
+* Use some more file pastry to cover everything; brush it with melted butter.
+* Bake in the oven on 200&deg;C, for about 40 minutes.
+* Rest for about 10 minutes.
+
+## Verdict
+
+The mushrooms release a lot of moisture, making the bottom of
+the pasty soggy. Next time, we better leave the mushrooms out
+of the Wellington.
+
+![Salmon Wellington opened](salmon-02.jpg "Salmon Wellington opened")
+
+
+Recipe: BBC salmon_wellington_86468 "Nigel Slater" nigel_slater
+
+Ingredients: #Salmon #Mushrooms #Cucumber #Filo pastry
+Chef: #Nigel Slater
+Source: #BBC
+Types: #Fish #Wellington
