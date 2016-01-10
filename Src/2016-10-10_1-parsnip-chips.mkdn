@@ -17,6 +17,7 @@ Image: parsnip-chips-01 Parsnip Chips
 * Dry in the oven for 3 hours, on 80&deg;C. Toss them around
   every 30-45 minutes.
 
+Based on a recipe from the book *Elementen*, by Tonny Berentsen et al.
 
 Ingredients: #Parsnip
 Source: #Elementen #De Kromme Dissel
