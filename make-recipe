@@ -20,6 +20,12 @@ my %sources;
 my %dates;
 my %types;
 
+my $base_url = "http://www.abigail.be/Recipes";
+my $img_url  = "$base_url/Images";
+my $html_url = "$base_url/HTML";
+my $xmlns    = "http://www.w3.org/1999/xhtml";
+my $xmlns_fb = "http://ogp.me/ns/fb#";
+
 my %icon = (
     prev         =>  "&#x27F5;",
     next         =>  "&#x27F6;",
@@ -109,8 +115,12 @@ for (my $i = 0; $i < @files; $i ++) {
     #
     $text =~ s {(!\[[^]]*\]\()} {$1../Images/}g;
 
-    $text =~ s {^Image:\s*(?:Images/)?(\S+?)(?:\.jpg)?\s+(.*\S)}
-               {![$2](../Images/$1.jpg "$2")}gm;
+    my $image;
+    while ($text =~ s {^Image:\s*(?:Images/)?(\S+?)(?:\.jpg)?(?: +(.*\S))?\s*$}
+                      {"![" . ($2 // $title) . "](../Images/$1.jpg " .
+                       '"' . ($2 // $title) . '")'}gem) {
+        $image //= $1;
+    }
 
     $text =~ s {^Recipe:\s*(.*)}{recipe $1, $name, $title}gem;
 
@@ -150,7 +160,6 @@ for (my $i = 0; $i < @files; $i ++) {
         push @{$dates {$date}} => [$name, $title, $first];
     }
 
-
     #
     # Convert to HTML.
     #
@@ -167,18 +176,28 @@ for (my $i = 0; $i < @files; $i ++) {
 
     $html =~ s{</h1>\K}{$nav_bar};
 
-    print $fh_out <<"    --";
-    <head>
-    <title>$title</title>
-    <link rel = "stylesheet" type = "text/css" href = "../Styles/style.css">
-    </head>
-    <body>
-    <div class = "outer">
-    <div class = "main">
-    $html
-    </div>
-    </div>
-    </body>
+    my $meta = <<"    --";
+        <meta property="og:url"   content = "$html_url/$name.html">
+        <meta property="og:title" content = "$title">
+    --
+    $meta .= <<"    --" if $image;
+        <meta property="og:image" content = "$img_url/$image.jpg">
+    --
+
+    print $fh_out <<"    --" =~ s/^\s+//gmr;
+        <html xmlns = "$xmlns" xmlns:fb = "$xmlns_fb">
+        <head>
+        $meta
+        <title>$title</title>
+        <link rel = "stylesheet" type = "text/css" href = "../Styles/style.css">
+        </head>
+        <body>
+        <div class = "outer">
+        <div class = "main">
+        $html
+        </div>
+        </div>
+        </body>
     --
 
     close $fh_out;
