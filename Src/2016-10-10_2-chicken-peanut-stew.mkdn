@@ -1,0 +1,47 @@
+# Chicken Peanut Stew
+
+Image: chicken-peanut-stew-01
+
+## Ingredients
+
++ 1125 g Chicken legs
++ 750 g Sweet potatoes, peeled, and cut in bite size pieces
++ 1 Large onion, peeled, and sliced
++ 2&half; Solo garlics (or 8 cloves of garlic), finely chopped
++ Large piece of ginger, finely chopped
++ 1 Red chili pepper, finely chopped
++ 1 Green chili pepper, finely chopped
++ Can of tomatoes (400g)
++ 1 l Chicken stock
++ 1 tsp Ground coriander (*ketoembar*)
++ 4 heaped tbsp. Peanut butter
++ Peanuts
++ Salt
++ Pepper
+
+## Instructions
+
+* In a large pan, brown the **chicken**, and set aside.
+* Fry the **onions** till soft. Loosen any chicken bits left behind.
+* Add the **garlic**, **ginger** and **chili peppers**, fry for 1-2 minutes.
+* Add the **sweet potatoes**, mix well.
+* Add **chicken**, **tomatoes**, **chicken stock**, **coriander**, 
+  and **peanut butter**.
+* Bring to a boil, then reduce heat and simmer for about 90 minutes.
+* Remove chicken from the stew, take the meat of the bones, shred the meat
+  in bite size pieces, and return the meat to the stew.
+* Season with **salt** and **pepper**.
+* Use **peanuts** to garnish the dish.
+
+## Notes
+
+* The original recipe uses 1 tsp. of cayenne pepper instead of the chilis.
+  The stew was less spicy than expected.
+* Unlike the original recipe, I added the peanuts at the end, instead of
+  stewing the peanuts.
+* Served with brown rice.
+
+Recipe: Simply african_chicken_peanut_stew
+Ingredients: #Chicken #Sweet potato #Onion #Garlic #Chili
+Ingredients: #Tomatoes #Peanut butter 
+Type: #Stew
