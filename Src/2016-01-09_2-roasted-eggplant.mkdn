@@ -26,4 +26,4 @@ from [Martha Stewart](http://www.marthastewart.com/).
 Ingredients: #Eggplant #Basil #Red wine vinegar
 Types: #Vegan #Side dish
 Chef: #Martha Stewart
-Source: #marthastewart.com
+Source: #Martha Stewart website
