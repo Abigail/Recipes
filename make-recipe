@@ -118,7 +118,7 @@ for (my $i = 0; $i < @files; $i ++) {
     my $image;
     while ($text =~ s {^Image:\s*(?:Images/)?(\S+?)(?:\.jpg)?(?: +(.*\S))?\s*$}
                       {"![" . ($2 // $title) . "](../Images/$1.jpg " .
-                       '"' . ($2 // $title) . '")'}gem) {
+                       '"' . ($2 // $title) . '")'}em) {
         $image //= $1;
     }
 
