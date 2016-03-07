@@ -25,4 +25,4 @@ Image: chicken-honey-ginger-01
 
 
 Recipe: Simply ginger_honey_chicken_wings
-Ingredients: #Chicken #Ginger #Honey #Garlic #Chile pepper #Sesame seeds
+Ingredients: #Chicken #Ginger #Honey #Garlic #Chili pepper #Sesame seeds
