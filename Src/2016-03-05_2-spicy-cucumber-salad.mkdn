@@ -1,0 +1,25 @@
+# Spicy Cucumber Salad
+
+Image: fish-ginger-01
+
+## Ingredients
+
+* 1 Cucumber
+* 1 Red chili pepper
+* 1 Lime (juice and rind)
+* 1 Thick slice of pineapple
+* Mint leaves, finely chopped
+
+## Instructions
+
+* Peel a **cucumber** and slice it length-wise. Remove the seeds, and
+  cut the cucumber in slices.
+* Remove the seeds from the **red chili pepper** and cut it thin strips.
+* Remove the peel and core of the **pineapple**, and julienne it.
+* Combine the cucumber, red chili pepper, pineapple, **lime juice**,
+  **lime rind**, and **mint leaves**. Mix well.
+
+Served with [fish with ginger sauce](2016-03-05_1-fish-ginger.html) and rice.
+
+Ingredients: #Cucumber #Chili pepper #Lime #Pineapple #Mint
+Type: #Salad
