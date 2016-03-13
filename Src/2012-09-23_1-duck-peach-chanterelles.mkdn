@@ -38,7 +38,7 @@ Image: duck-02 Duck
 Based on a recipe from [Jean Beddington](http://jeanbeddington.nl/)
 published in [De Volkskrant](http://www.volkskrant.nl/) on September 21, 2012.
 
-Ingredients: #Duck #Fennel #Potato #Peach #Red onions #Garlic
+Ingredients: #Duck #Fennel #Potato #Peach #Onion, red #Garlic
 Ingredients: #Shallot #Chanterelles #Pancetta
 Chef: #Jean Beddington
 Source: #De Volkskrant

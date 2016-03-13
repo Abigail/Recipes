@@ -32,8 +32,8 @@ Image: baked-camembert-01 Honey-Hazelnut Baked Camembert
 
 
 Recipe: Simply honey_hazelnut_baked_brie
-Ingredients: #Camembert #Honey #Hazelnut #Balsamic vinegar
-Ingredients: #Red wine vinegar
+Ingredients: #Camembert #Honey #Hazelnut #Vinegar, balsamic
+Ingredients: #Vinegar, red wine
 Types: #Vegetarian
 Chef: #Elise Bauer
 Sources: #Simply Recipes

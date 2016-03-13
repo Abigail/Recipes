@@ -23,7 +23,7 @@ Image: eggplant-01 Roasted Eggplant
 Based on a
 [recipe](http://www.marthastewart.com/326596/roasted-eggplant-with-basil)
 from [Martha Stewart](http://www.marthastewart.com/).
-Ingredients: #Eggplant #Basil #Red wine vinegar
+Ingredients: #Eggplant #Basil #Vinegar, red wine
 Types: #Vegan #Side dish
 Chef: #Martha Stewart
 Source: #Martha Stewart website
