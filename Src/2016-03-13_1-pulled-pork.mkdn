@@ -1,5 +1,7 @@
 # Pulled Pork
 
+Image: pulled-pork-01
+
 ## Ingredients
 
 * 1 kg pork shoulder (*procureur*)
@@ -26,6 +28,8 @@
 
 
 Serve with roasted potatoes and [cole slaw](2016-03-13_2-cole-slaw.html).
+
+Image: pulled-pork-cole-slaw-01 Pulled pork with cole slaw
 
 Based on a recipe from the magazine *Delicious*.
 
