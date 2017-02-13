@@ -1,5 +1,7 @@
 # Cole Slaw
 
+Image: cole-slaw-01
+
 ## Ingredients
 
 * &half; White cabbage
@@ -20,6 +22,8 @@
 * Season with *pepper*.
 
 Served with [pulled pork](2016-03-13_1-pulled-pork.html) and roasted potatoes.
+
+Image: pulled-pork-cole-slaw-01 Pulled pork with cole slaw
 
 Recipe: BBC pulledporkwithsausag_88807 "Simon Rimmer" simon_rimmer
 
