@@ -83,13 +83,15 @@ sub recipe {
                   $parts [1], $parts [2], $parts [3], $parts [2];
     }
     elsif ($parts [0] eq "Simply") {
-        push @{$chefs {"Elise Bauer"}}      => [$name, $title];
+        my $chef = $parts [2] // "Elise Bauer";
+        my $path = lc ($chef =~ s/ .*//r);
+        push @{$chefs {$chef}}              => [$name, $title];
         push @{$sources {"Simply Recipes"}} => [$name, $title];
         return
           sprintf "Based on a [recipe]"                                      .
                   "(http://www.simplyrecipes.com/recipes/%s) "               .
-                  "from [Elise Bauer](http://www.simplyrecipes.com/about/)." =>
-                  $parts [1];
+                  "from [%s](http://www.simplyrecipes.com/author/%s/)." =>
+                  $parts [1], $chef, $path;
     }
     return $line;
 }

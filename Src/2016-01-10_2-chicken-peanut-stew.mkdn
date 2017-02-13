@@ -41,7 +41,7 @@ Image: chicken-peanut-stew-01
   stewing the peanuts.
 * Served with brown rice.
 
-Recipe: Simply african_chicken_peanut_stew
+Recipe: Simply african_chicken_peanut_stew "Hank Shaw"
 Ingredients: #Chicken #Sweet potato #Onion #Garlic #Chili pepper
 Ingredients: #Tomato #Peanut butter 
 Type: #Stew
