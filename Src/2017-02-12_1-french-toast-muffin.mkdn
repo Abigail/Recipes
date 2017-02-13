@@ -1,0 +1,37 @@
+# French Toast Muffins
+
+Image: french-toast-muffins-01
+
+## Ingredients
+
+* Bread, 7 slices, cubed
+* 200 ml Milk
+* 3 Eggs
+* 2 tsp Cinnamon
+* Vanilla pod, halved, seeds removed
+* 1 Apple, cored and diced
+* Butter, melted
+* Dark sugar
+
+## Instructions
+
+* Put **eggs**, **milk**, **cinnamon**, and **vanilla seeds** in a bowl
+  and mix well.
+* Add **bread** and let it soak up the mixture. Add **vanilla pod**.
+* Put in fridge overnight.
+* Remove **vanilla pod**, add **apple**, and mix well.
+* Grease muffin forms, and fill with bread-apple mixture.
+* Brush the muffins with **melted butter** and sprinkle some **dark sugar**
+  over them.
+* Bake on 175&deg;C for 25-30 minutes.
+
+## Notes
+
+* The bread needs something to enhance the flavour. Sugar? More cinnamon?
+* Make 12 muffins.
+
+Image: french-toast-muffins-02
+
+Ingredients: #bread #milk #egg #cinnamon #vanilla #apple
+Type: #Breakfast #Lunch
+Recipe: Simply apple_cinnamon_french_toast_muffins "Sally Vargas"
