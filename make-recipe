@@ -93,6 +93,16 @@ sub recipe {
                   "from [%s](http://www.simplyrecipes.com/author/%s/)." =>
                   $parts [1], $chef, $path;
     }
+    elsif ($parts [0] eq "Sprinkle") {
+        my $chef = $parts [2] // "Heather Baird";
+        push @{$chefs {$chef}}              => [$name, $title];
+        push @{$sources {"Sprinkle Bakes"}} => [$name, $title];
+        return 
+          sprintf "Based on a [recipe]"                                       .
+                  "(http://www.sprinklebakes.com/%s.html) "                   .
+                  "from [%s](http://www.sprinklebakes.com/p/about.html). " =>
+                  $parts [1], $chef
+    }
     return $line;
 }
 
