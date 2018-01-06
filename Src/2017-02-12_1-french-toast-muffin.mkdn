@@ -32,6 +32,6 @@ Image: french-toast-muffins-01
 
 Image: french-toast-muffins-02
 
-Ingredients: #bread #milk #egg #cinnamon #vanilla #apple
+Ingredients: #Bread #Milk #Egg #Cinnamon #Vanilla #Apple
 Type: #Breakfast #Lunch #Vegetarian
 Recipe: Simply apple_cinnamon_french_toast_muffins "Sally Vargas"
