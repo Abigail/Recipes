@@ -106,6 +106,9 @@ sub recipe {
     return $line;
 }
 
+my @merges = ([\%types  =>  "Fish"      =>  "Fish & Sea food"],
+              [\%types  =>  "Sea food"  =>  "Fish & Sea food"]);
+
 for (my $i = 0; $i < @files; $i ++) {
     my $name = $files [$i];
     open my $fh_in,  "<", "Src/$name.mkdn";
@@ -153,6 +156,16 @@ for (my $i = 0; $i < @files; $i ++) {
                           : $type =~ /^Type/i        ? \%types
                           : die "Huh?\n";
             push @{$$type_data {$entry}} => [$name, $title];
+        }
+    }
+
+    #
+    # Merge categories
+    #
+    foreach my $map_info (@merges) {
+        my ($type_data, $from, $to) = @$map_info;
+        if ($$type_data {$from}) {
+            push @{$$type_data {$to}} => @{delete $$type_data {$from}};
         }
     }
 
