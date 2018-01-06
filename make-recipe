@@ -36,6 +36,22 @@ my %icon = (
     sources      =>  "&#x24C8;",
 );
 
+my @mappings = ([qr {\b1/2\b}  =>  "&frac12;"],
+                [qr {\b1/3\b}  =>  "&#x2153;"],
+                [qr {\b2/3\b}  =>  "&#x2154;"],
+                [qr {\b1/4\b}  =>  "&frac14;"],
+                [qr {\b3/4\b}  =>  "&frac34;"],
+                [qr {\b1/5\b}  =>  "&#x2155;"],
+                [qr {\b2/5\b}  =>  "&#x2156;"],
+                [qr {\b3/5\b}  =>  "&#x2157;"],
+                [qr {\b4/5\b}  =>  "&#x2158;"],
+                [qr {\b1/6\b}  =>  "&#x2159;"],
+                [qr {\b5/6\b}  =>  "&#x215A;"],
+                [qr {\b1/8\b}  =>  "&#x215B;"],
+                [qr {\b3/8\b}  =>  "&#x215C;"],
+                [qr {\b5/8\b}  =>  "&#x215D;"],
+                [qr {\b7/8\b}  =>  "&#x215E;"],);
+
 sub nav_bar {
     my %args = @_;
 
@@ -184,6 +200,12 @@ for (my $i = 0; $i < @files; $i ++) {
         my $first = $date eq $dates [0];
         push @{$dates {$date}} => [$name, $title, $first];
     }
+
+    foreach my $map_info (@mappings) {
+        my ($pat, $replacement) = @$map_info;
+        $text =~ s/$pat/$replacement/g;
+    }
+
 
     #
     # Convert to HTML.
