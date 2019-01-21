@@ -1,0 +1,42 @@
+# Sausage Lentil Roll
+
+Image: sausage-lentil-roll-01 Sausage Lentil Roll
+
+## Ingredients
+
+* 2 Sausages
+* 2 Large onions, diced
+* 3 Cloves of garlic, chopped
+* Ginger, chopped
+* 1 Large carrot, shredded
+* 1 Tbsp. fennel seeds, lightly toasted and ground
+* 300 g Lentils (2 small tins)
+* Thyme
+* 1 Sheet of puff pastry
+* Sesame seeds
+* 1 Egg, beaten
+
+## Instructions
+
+* Fry the **onions**, **garlic**, **ginger** and **carrot** till soft.
+  Let it cool.
+* Remove the casings from the **sausages**. Mix the meat with the
+  **fennel seeds**, **thyme** and **lentils**. Mix in the fried and
+  cooled vegetables.
+* Cut the **pastry sheet** lengthwise. 
+* Make two logs of the filling and put them on the pastry. Roll them 
+  into rolls, using the **egg** to glue the ends together.
+* Brush the rolls with the remaining egg. Sprinkle **sesame seeds**
+  over them
+* Bake for 20-25 minutes minutes on 180&deg;C.
+
+## Notes
+
+* The original recipe uses sage instead of thyme, and also uses a courgette.
+
+Recipe: BBC sausage_rolls_14294 "Tom Kerridge" tom_kerridge
+
+Chefs: #Tom Kerridge
+Ingredients: #Sausage Meat #Lentils #Onion #Carrot
+Source: #BBC
+Type: #Oven #Puff pastry 
