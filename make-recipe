@@ -12,7 +12,7 @@ umask 022;
 use Text::Markdown 'markdown';
 
 opendir my $dh, "Src";
-my @files = map {/^(.*)\.mkdn$/ ? $1 : ()} readdir $dh;
+my @files = sort map {/^(.*)\.mkdn$/ ? $1 : ()} readdir $dh;
 
 my %ingredients;
 my %chefs;
