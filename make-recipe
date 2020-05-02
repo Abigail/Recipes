@@ -233,6 +233,9 @@ for (my $i = 0; $i < @files; $i ++) {
         <meta property="og:image" content = "$img_url/$image.jpg">
     --
 
+    $html =~ s{<img \s+ src \s* = \s* " \K ../ ([^"]+)}
+              {'data:image/jpg;base64,' . `base64 -i $1`}exg;
+
     print $fh_out <<"    --" =~ s/^\s+//gmr;
         <html xmlns = "$xmlns" xmlns:fb = "$xmlns_fb">
         <head>
