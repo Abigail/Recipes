@@ -32,7 +32,7 @@ Image: stilton-stuffed-mushroom-01 Stilton Stuffed Mushrooms
 
 Based on the recipe [Stilton & Walnut Stuffed Portabella Mushrooms](https://www.naturalcookeryschool.com/stilton-walnut-stuffed-portabella-mushrooms/).
 
-Dates: 2018-12-31 2019-03-10
-Ingredients: #Mushrooms #Pecans #walnuts #Stilton #Parsley
+Dates: 2018-12-31 2019-03-10 2019-12-31
+Ingredients: #Mushrooms #Pecans #Walnuts #Stilton #Parsley
 Source: #Natural Cookery School
 Type: #Oven #Vegetarian
