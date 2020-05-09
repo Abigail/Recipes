@@ -1,0 +1,30 @@
+# Spicy Sausages
+
+Image: spicy-sausage-01 Spicy Sausages
+
+## Ingredients
+
+* 2-4 Fresh Sausages
+* 1 pkg Tomate Frito
+* Rosemary Leaves
+* Rosemary Twig
+* Ginger
+* Garlic
+* Chili flakes
+
+
+## Instructions
+
+* Roast the **sausages** on 200&deg;C for about 20 minutes, turning the
+  sausages once. The sausages should brown a bit.
+* Chop **rosemary leaves**, **ginger** and **garlic** very fine, mix with the
+  **chili flakes** through the **tomate frito**.
+* Reduce the oven temperature to 180&deg;C, cover sausages with the
+  tomato sauce. Add **rosemary twig**. Roast for another 15 minutes or so.
+
+Based on the recipe [Pikante Saucijzen van de Plaat](https://deliciousmagazine.nl/site/2018/01/18/pikante-saucijzen-van-de-plaat/61722/).
+
+Dates: 2020-05-01, 2020-05-03
+Ingredients: #Sausage #Tomate Frito #Rosemary #Ginger #Garlic
+Type: #Oven #Meat
+Source: #Delicious
