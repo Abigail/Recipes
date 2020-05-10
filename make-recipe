@@ -26,6 +26,8 @@ my $html_url = "$base_url/HTML";
 my $xmlns    = "http://www.w3.org/1999/xhtml";
 my $xmlns_fb = "http://ogp.me/ns/fb#";
 
+my $style    = "<style>" . `cat Styles/style.css` . "</style>";
+
 my %icon = (
     prev         =>  "&#x27F5;",
     next         =>  "&#x27F6;",
@@ -124,8 +126,6 @@ sub recipe {
 
 my @merges = ([\%types  =>  "Fish"      =>  "Fish & Sea food"],
               [\%types  =>  "Sea food"  =>  "Fish & Sea food"]);
-
-my $style  = `cat Styles/style.css`;
 
 for (my $i = 0; $i < @files; $i ++) {
     my $name = $files [$i];
@@ -241,7 +241,7 @@ for (my $i = 0; $i < @files; $i ++) {
         <head>
         $meta
         <title>$title</title>
-        <style>$style</style>
+        $style
         </head>
         <body>
         <div class = "outer">
@@ -299,7 +299,7 @@ print $fh <<"--";
 <html>
 <head>
 <title>Recipe Index</title>
-<link rel = "stylesheet" type = "text/css" href = "../Styles/style.css">
+$style
 </head>
 <body>
 <div class = "outer">
@@ -325,7 +325,7 @@ foreach my $set ([$tag_html,    "Ingredients"],
 <html>
 <head>
 <title>$title Index</title>
-<link rel = "stylesheet" type = "text/css" href = "../Styles/style.css">
+$style
 </head>
 <body>
 <div class = "outer">
