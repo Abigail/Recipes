@@ -93,6 +93,7 @@ sub recipe {
     my @parts = $line =~ /("[^"]+"|\S+)/g;
     @parts = map {/"(.*)"/ ? $1 : $_} @parts;
     if ($parts [0] eq "BBC") {
+        # BBC nameofdish_NNN "Name of Chef" chef_urf
         push @{$chefs {$parts [2]}} => [$name, $title];
         push @{$sources {BBC}}      => [$name, $title];
         return 
