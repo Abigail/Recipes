@@ -208,6 +208,9 @@ for (my $i = 0; $i < @files; $i ++) {
         $text =~ s/$pat/$replacement/g;
     }
 
+    $text =~ s/'([aeiou])/&${1}acute;/g;
+    $text =~ s/([0-9])\s*C\b/$1&deg;C/g;
+
 
     #
     # Convert to HTML.
