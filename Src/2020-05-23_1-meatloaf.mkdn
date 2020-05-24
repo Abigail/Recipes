@@ -1,0 +1,57 @@
+# Meatloaf
+
+Image: meatloaf-01
+
+## Ingredients
+
+### For the meatloaf
+
+* 1 kg beef/pork mince ("half-om-half")
+* 50 g smoked bacon, finely chopped
+* 1 onion, finely chopped
+* 2 celery sticks, finely chopped
+* 1 carrot, finely chopped
+* 2 solo garlic, pressed
+* 1 tsp dried oregano
+* 1 tbsp dried thyme leaves
+* 1 tsp mustard
+* 100 g breadcrumbs
+* 1 egg
+* 8-10 rashes of streaky bacon
+* Pepper
+* Salt
+
+### For the glaze
+
+* 1 tin tomato paste
+* 1 tbsp mustard
+* 1 tbsp maple syrup or soft brown sugar
+* 1 tbsp white wine vinegar
+
+
+## Instructions
+
+* Saut'e the **onion**, **celery**, and **carrot** until the
+  onion is translucent and the vegatbles are soft. Increase
+  the heat, and continue till the onions are slightly caramelised.
+  Add half the **garlic** and saut'e for another 2 minutes. Cool.
+* Mix **mince** and **bacon**; add **oregano**, **thyme**, 
+  **mustard**, **breadcrumbs** and the rest of the garlic.
+  Add the cooked vegatables and the **egg**. Season with **salt**
+  and **pepper**. Mix well.
+* Add a strip of baking paper to the bottom of a large loaf pan;
+  pour in the meatloaf mixture. Press the mixture so no airpockets
+  remain.
+* Put the **bacon rashes** in a criss-cross pattern over the
+  meatloaf. Tuck in the ends.
+* Put all the ingredients for the glaze in a small sauce pan,
+  and warm it on a low heat till all the sugar is dissolved.
+  Use a brush to cover the meatloaf with most of the glaze.
+* Bake the meatloaf for about 30 minutes on 200C.
+* Brush the rest of the glaze over the meatloaf, and bake for
+  another 25-30 minutes.
+
+Recipe: BBC meatloaf_56639 "The Hairy Bikers" hairy_bikers
+Ingredients: #Mince #Onion #Celery #Carrot #Bacon
+Type: #Oven
+Source: #BBC
