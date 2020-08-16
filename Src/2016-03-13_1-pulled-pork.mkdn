@@ -38,3 +38,4 @@ Ingredients: #Vinegar, white wine
 Ingredients: #Stock #Sugar #Mustard #Worchester sauce #Thyme #Cinnamon
 Type: #Slow cooking #American #Oven
 Source: #Delicious
+Dates: 2016-03-13, 2020-08-16
