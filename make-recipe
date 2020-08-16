@@ -275,6 +275,13 @@ if ($date_html) {
     $date_html = "<ul>$date_html</ul>";
 }
 
+my %urls = (
+    "Cookie and Kate"  =>  "https://cookieandkate.com/",
+    "Simply Recipes"   =>  "https://www.simplyrecipes.com/",
+    "Sprinkle Bakes"   =>  "https://www.sprinklebakes.com/",
+);
+
+
 foreach my $set ([\$tag_html,    \%ingredients],
                  [\$chef_html,   \%chefs],
                  [\$source_html, \%sources],
@@ -282,7 +289,11 @@ foreach my $set ([\$tag_html,    \%ingredients],
     my ($html, $data) = @$set;
     $$html .= "<ul class = 'tag-list'>\n";
     foreach my $entry (sort {$a cmp $b} keys %$data) {
-        $$html .= "<li class = 'tag-item'>$entry\n<ul>\n";
+        my $item = $entry;
+        if ($urls {$entry}) {
+            $item = "<a href = '" . $urls {$entry} . "'>" . $entry . "</a>";
+        }
+        $$html .= "<li class = 'tag-item'>$item\n<ul>\n";
         my ($pname, $ptitle) = ("", "");
         foreach my $entry (sort {$$a [1] cmp $$b [1]} @{$$data {$entry}}) {
             my ($name, $title) = @$entry;
