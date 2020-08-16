@@ -103,7 +103,7 @@ sub recipe {
     }
     elsif ($parts [0] eq "Simply") {
         my $chef = $parts [2] // "Elise Bauer";
-        my $path = lc ($chef =~ s/ .*//r);
+        my $path = lc ($chef =~ s/\s+/-/gr);
         push @{$chefs {$chef}}              => [$name, $title];
         push @{$sources {"Simply Recipes"}} => [$name, $title];
         return
