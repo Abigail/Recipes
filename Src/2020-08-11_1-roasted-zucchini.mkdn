@@ -1,0 +1,29 @@
+# Roasted Zucchini with Garlic
+
+Image: roasted-zucchini-01 Roast Zucchini
+
+## Ingredients
+
+* 1 Zucchini
+* Couple of garlic cloves, minced
+* Olive oil
+* Fresh or dried herbs (chopped fine if fresh)
+* Pepper
+
+
+## Instructions
+
+* Cut the **zucchini** in half in the middle, then each half quarted
+  lengthwise.
+* Combine zucchini, **olive oil** and **garlic** in a mixing bowl.
+* Place on a baking sheet, skin side down. 220&deg;C for 7 minutes, or
+  when the zucchini is done.
+* Season with **pepper** and **herbs**.
+
+## Notes
+
+* 2020-08-11: Used mint and basil as fresh herbs.
+
+Recipe: Simply roasted_zucchini_with_garlic
+Ingredients: #Zucchini #Garlic
+Type: #Oven
