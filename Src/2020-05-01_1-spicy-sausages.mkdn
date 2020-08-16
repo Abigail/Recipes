@@ -24,7 +24,7 @@ Image: spicy-sausage-01 Spicy Sausages
 
 Based on the recipe [Pikante Saucijzen van de Plaat](https://deliciousmagazine.nl/site/2018/01/18/pikante-saucijzen-van-de-plaat/61722/).
 
-Dates: 2020-05-01, 2020-05-03
+Dates: 2020-05-01, 2020-05-03, 2020-08-11
 Ingredients: #Sausage #Tomate Frito #Rosemary #Ginger #Garlic
 Type: #Oven #Meat
 Source: #Delicious
