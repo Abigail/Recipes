@@ -22,6 +22,6 @@ Image: pineapple-salsa-01 Pineapple Salsa
 * 2020-08-15: Used mint and basil instead of coriander.
 
 Recipe: Based on the recipe [Fresh Pineapple Salsa](https://cookieandkate.com/fresh-pineapple-salsa-recipe/) by [Kate](https://cookieandkate.com/about/).
-Ingredients: #Pineapple #Bell Pepper #Red Onion #Lime #Jalape&#x0071;o
-Type: #Salsa #Side dish
+Ingredients: #Pineapple #Bell Pepper #Onion, red #Lime #Jalape&#x0071;o
+Type: #Salsa #Side dish #Vegan
 Source: #Cookie and Kate
